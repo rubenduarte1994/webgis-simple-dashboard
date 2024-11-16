@@ -1,0 +1,168 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #181818;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  position: relative;
+}
+
+.map-container {
+  flex: 3;
+}
+
+.side-bar-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.box-1,
+.box-2,
+.box-3,
+.box-4 {
+  padding: 15px;
+  margin: 10px 0;
+  height: 25%;
+  text-align: center;
+}
+
+.channel-information-container {
+  position: absolute;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  bottom: 0px;
+  left: 5px;
+  padding: 15px;
+  z-index: 1000;
+}
+
+.channel-logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.channel-name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.popup-content {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+.popup-content strong {
+  color: #000000; /* Azul para títulos */
+}
+
+.popup-content p {
+  margin: 0;
+  padding: 2px 0;
+}
+
+/* Estado "fechado" da barra lateral */
+.side-bar-container.closed {
+  transform: translateX(-100%); /* Move a barra lateral para fora da tela */
+}
+
+/* Estado "fechado" para o botão de alternância (rotação para a esquerda) */
+.toggle-button.closed {
+  left: 0; /* Move o botão para o lado esquerdo */
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.leaflet-draw-actions,
+.leaflet-draw-tooltip {
+  display: none !important;
+}
+
+.box-1 {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;
+}
+
+.tree-count {
+  font-weight: bold;
+  font-size: 50px; /* Tamanho grande para o número */
+  color: #00b04f;
+}
+
+.box-1 small {
+  font-size: 0.8em; /* Tamanho menor para o texto */
+  font-weight: bold;
+  color: #ffffff; /* Cor mais clara para diferenciar */
+}
+
+#speciesChart {
+  margin: 0 auto;
+  width: 100%; /* Ajuste proporcional ao tamanho da box */
+  max-height: 250px; /* Limite de altura */
+}
+
+#stateChart {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 250px; /* Limite de altura */
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column; /* Empilha o mapa e o sidebar verticalmente */
+  }
+  .map-container {
+    flex: 1 1 50%; /* O mapa ocupa 50% da largura */
+    height: 50vh; /* Define uma altura proporcional para o mapa */
+  }
+  .side-bar-container {
+    flex: 1 1 50%; /* O sidebar ocupa 50% da largura */
+    display: flex; /* Configura o layout interno como flex */
+    flex-direction: row; /* Mantém as boxes empilhadas */
+    height: 50vh; /* Define a altura proporcional */
+    padding: 10px; /* Adiciona espaço interno */
+    overflow-y: auto; /* Permite rolagem caso o conteúdo seja maior que a altura */
+  }
+
+  .box-1,
+  .box-3 {
+    display: none;
+  }
+  .box-2 {
+    flex: 1; /* Faz a box-2 ocupar o espaço disponível */
+    margin: 0; /* Remove margens extras */
+    padding: 0; /* Remove padding para aproveitar todo o espaço */
+    width: 100%; /* Faz a box ocupar toda a largura */
+    height: 100%; /* Faz a box ocupar toda a altura */
+    display: flex; /* Usa flexbox para centralizar o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+  }
+  #speciesChart {
+    width: 100%; /* O canvas ocupa toda a largura disponível */
+    height: 90vh; /* O canvas ocupa quase toda a altura da tela */
+  }
+  .channel-information-container {
+    display: none;
+  }
+}

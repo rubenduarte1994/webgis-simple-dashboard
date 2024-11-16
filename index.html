@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- CARREGAMENTO CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- frame: #001 -->
+    <div class="main-container">
+      <div class="map-container" id="map"></div>
+      <div class="side-bar-container">
+        <div class="box-1"></div>
+
+        <div class="box-2">
+          <canvas id="speciesChart"></canvas>
+        </div>
+
+        <div class="box-3">
+          <canvas id="stateChart"></canvas>
+        </div>
+
+      <div class="channel-information-container">
+        <div class="channel-logo"><img src="photo.png" /></div>
+
+        <div class="channel-name">
+          Dashboard created by Rúben Duarte - @MapsbyRGD at YouTube
+        </div>
+      </div>
+      <!-- rect: Basemap-Selector -->
+      <div class="basemap-selector"></div>
+      <!-- rect: Data-Selector -->
+      <div class="data-selector"></div>
+      <!-- rect: Location-Selector -->
+      <div class="location-selector"></div>
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"
+      defer
+    ></script>
+    <script
+      src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"
+      defer
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+  </body>
+</html>
